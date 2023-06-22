@@ -1,0 +1,21 @@
+.menu {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+
+.coluna span {
+    background-color: var(--mostarda);
+    margin: 1rem;
+    padding: 10px 30px;
+    width: 200px;
+    text-align: center;
+}

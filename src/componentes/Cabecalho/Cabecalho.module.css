@@ -1,0 +1,17 @@
+.divCabecalho {
+    text-align: center;
+    align-items: center;
+    font-family: 'Limelight', cursive;
+    text-transform: uppercase;
+    color: var(--fonte-destaque);
+}
+
+.divCabecalho h1 {
+    font-size: 3.9em;
+    margin-top: 1rem;
+}
+
+.divCabecalho h2 {
+    font-size: 1.9em;
+
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Questrial&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --vermelho: #C32C2D;
+  --nude: #E7D3A9;
+  --mostarda: #FBB81B;
+  --fonte-destaque: #EBEAD9;
+  --fonte-escura: #201E1E;
+  --dourado: #CC9F54;
+  --sombra-destaque: 15px 15px 30px rgb(25, 25, 25);
+  --sombra-sombreada: -15px -15px 30px rgb(60, 60, 60);
+}
+
+body {
+  background-color: var(--vermelho);
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Questrial', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: var(--fonte-escura);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #878581;
+}
+
+
+
+
+
+/* titulo logo 
+font-family: 'Limelight', cursive; 
+outra letra
+font-family: 'Limelight', cursive;
+font-family: 'Questrial', sans-serif;
+*/
+
+.title {
+  color: white;
+  font-size: 40px;
+  color: blue;
+}
+
+.container-inicio {
+  text-align: center;
+  margin: 3rem;
+}

@@ -1,0 +1,19 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: column;
+    width: 900px;
+    justify-content: center;
+
+}
+
+.teste {
+    display: flex;
+}
