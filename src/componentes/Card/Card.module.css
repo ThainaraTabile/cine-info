@@ -31,17 +31,6 @@
     height: 300px;
 }
 
-/* .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    box-sizing: border-box;
-    margin: 2rem;
-    background-color: var(--nude);
-    box-shadow: var(--sombra-destaque, --sombra-sombreada);
-} */
-
 .imagem {
     width: 300px;
     box-sizing: border-box;
@@ -58,11 +47,6 @@
 .titulo h2 {
     text-align: center;
 
-}
-
-.span {
-    justify-content: right;
-    display: flex;
 }
 
 .detalhes {
@@ -88,4 +72,10 @@
 .info span {
     display: flex;
     text-align: left;
+}
+
+.descricao {
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
 }
