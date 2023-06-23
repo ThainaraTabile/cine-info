@@ -1,4 +1,12 @@
-export const urlBase = 'https://api.themoviedb.org/3/movie/';
-export const chaveApi = '&api_key=3bf2040923cd458825e0054323a2ecbd';
-export const urlImag = 'https://image.tmdb.org/t/p/w200';
-export const urlSearch = 'https://api.themoviedb.org/3/search/movie/';
+const urlApi = 'https://api-filmes-rose.vercel.app';
+
+export const obterListaDeFilmes = async () => {
+    const response = await fetch(`${urlApi}/movies`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    return response.json();
+}
