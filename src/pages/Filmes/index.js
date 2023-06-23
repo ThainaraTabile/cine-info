@@ -3,7 +3,6 @@
 // import MovieCard from "../../componentes/MovieCard";
 // import { urlBase, chaveApi } from "../../api/config-api";
 
-import { useEffect } from "react";
 
 // const Filme = () => {
 //     const { id } = useParams();
