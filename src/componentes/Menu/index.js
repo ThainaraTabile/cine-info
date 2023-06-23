@@ -1,31 +1,28 @@
-
 import styles from './Menu.module.css';
-import React from "react";
-import { Link } from "react-router-dom";
-const Menu = () => {
+import React, { useState } from "react";
+
+const Menu = ({ aoSelecionarGenero }) => {
+    const [selecionaGenero, setSelecionaGenero] = useState(null);
+
+    const clickSelecionaGenero = (genero) => {
+        setSelecionaGenero(genero);
+        aoSelecionarGenero(genero);
+
+    }
     return (
         <section className={styles.menu}>
             <div className={styles.coluna}>
-                <span>
-                    <Link to='/acao'>ação</Link>
-                </span>
-                <span>
-                    <Link to='/comedia'>comédia</Link>
-                </span>
-            </div>
-            <div className={styles.coluna}>
-                <span>
-                    <Link to='/drama'>drama</Link>
-                </span>
-                <span>
-                    <Link to='/infantil'>infantil</Link>
-                </span>
-            </div>
-            <div className={styles.coluna}>
-                <span>
-                    <Link to='/todos'>todos</Link>
-                </span>
+                <span onClick={() => clickSelecionaGenero('Animação')}>Animação</span>
 
+                <span onClick={() => clickSelecionaGenero('Comédia')}>Comédia</span>
+
+            </div>
+            <div className={styles.coluna}>
+                <span onClick={() => clickSelecionaGenero('Drama')}>Drama</span>
+                <span onClick={() => clickSelecionaGenero('Ficção Científica')}>Ficção Científica</span>
+            </div>
+            <div className={styles.coluna}>
+                <span onClick={() => clickSelecionaGenero('')}>Todos</span>
             </div>
 
         </section>

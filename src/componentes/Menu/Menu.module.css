@@ -16,6 +16,23 @@
     background-color: var(--mostarda);
     margin: 1rem;
     padding: 10px 30px;
-    width: 200px;
+    width: 300px;
+    height: 50px;
     text-align: center;
+}
+
+.menu span {
+    display: flex;
+    font-family: 'Questrial', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: var(--fonte-escura);
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu span:hover {
+    color: #878581;
 }
