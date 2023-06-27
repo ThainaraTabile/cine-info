@@ -34,11 +34,11 @@ const Card = ({ generoSelecionado }) => {
                         </div>
                         <div className={styles.descricao}>
                             <p>{filme.description}</p>
-                            <p>Genêro: {filme.genre}</p>
+                            <p>Gênero: {filme.genre}</p>
                         </div>
                         <div className={styles.info}>
                             <span>
-                                <FaStar /> {filme.rating}
+                                <FaStar color="var(--dourado)" /> {filme.rating}
                             </span>
                             <span>Duração:{filme.duration}</span>
                         </div>

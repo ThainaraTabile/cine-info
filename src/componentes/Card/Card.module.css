@@ -67,6 +67,7 @@
     margin: 1rem;
     flex-direction: column;
     text-align: center;
+    font-family: 'Questrial', sans-serif;
 }
 
 .info span {
@@ -79,4 +80,11 @@
     justify-content: center;
     text-align: justify;
     padding: 0 12px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.descricao p:nth-child(2) {
+    margin: 1rem;
+    color: var(--vermelho);
+    font-weight: bold;
 }
