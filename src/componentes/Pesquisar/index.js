@@ -1,69 +1,36 @@
-// import styles from './Pesquisar.module.css';
-// import { BiSearchAlt2 } from 'react-icons/bi'
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// function Pesquisar() {
-
-//     const [pesquisar, setPesquisa] = useState('');
-//     const navigate = useNavigate();
-
-//     const aoEnviar = (e) => {
-//         e.preventDefault();
-//         if (!pesquisar) return
-//         navigate(`/search?q=${pesquisar}`);
-//         setPesquisa('');
-//     }
-
-//     return (
-//         <div className={styles.pesquisar}>
-//             <form onSubmit={aoEnviar}>
-//                 <input
-//                     className={styles.input}
-//                     placeholder='Pesquisar pelo nome'
-//                     onChange={(e) => setPesquisa(e.target.value)}
-//                     value={pesquisar}
-//                 />
-//                 <button type='submit' className={styles.btnIcon}>
-//                     <span className={styles.icon}>
-//                         <BiSearchAlt2 size={30} />
-//                     </span>
-//                 </button>
-//             </form>
-//         </div>
-//     )
-// }
-
-// export default Pesquisar;
-
-
 import styles from './Pesquisar.module.css';
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { useState } from 'react';
-import { obterListaDeFilmes } from '../../api/config-api';
+import { filtrarPorTitulo } from '../../api/config-api';
 import { useEffect } from 'react';
+
+import { FaStar } from 'react-icons/fa';
 
 function Pesquisar() {
 
-    const [pesquisar, setPesquisar] = useState('');
+    const [tituloInput, setTituloInput] = useState([]);
+    const [filmesFiltrados, setFilmesFiltrados] = useState([]);
 
     const aoEnviar = (e) => {
         e.preventDefault();
-        if (!pesquisar) return
-        setPesquisar('');
+        if (!tituloInput) return
+        setTituloInput('');
     }
 
+
+
     useEffect(() => {
-        const buscarFilmes = async () => {
+        const buscarFilmesPorTitulo = async () => {
             try {
-                const filmesData = await obterListaDeFilmes();
-                setPesquisar(filmesData);
+                const filmesData = await filtrarPorTitulo(tituloInput);
+                setFilmesFiltrados(filmesData);
             } catch (error) {
                 console.error('Erro ao obter filmes!');
             }
         };
-        buscarFilmes();
-    }, [pesquisar]);
+        buscarFilmesPorTitulo();
+    }, [tituloInput]);
+
 
     return (
         <div className={styles.pesquisar}>
@@ -71,8 +38,9 @@ function Pesquisar() {
                 <input
                     className={styles.input}
                     placeholder='Pesquisar pelo nome'
-                    onChange={(e) => setPesquisar(e.target.value)}
-                    value={pesquisar}
+                    onChange={(e) => setTituloInput(e.target.value)}
+                    value={tituloInput}
+
                 />
                 <button type='submit' className={styles.btnIcon}>
                     <span className={styles.icon}>
@@ -80,6 +48,27 @@ function Pesquisar() {
                     </span>
                 </button>
             </form>
+            <div>
+                {filmesFiltrados.map((filme) => (
+                    <div className={styles.cardsFilme} key={filme.title}>
+                        <img src={filme.image} alt={filme.title} className={styles.imagem} />
+                        <div className={styles.titulo}>
+                            <h2>{filme.title}</h2>
+                        </div>
+                        <div className={styles.descricao}>
+                            <p>{filme.description}</p>
+                            <p>Genêro: {filme.genre}</p>
+                        </div>
+                        <div className={styles.info}>
+                            <span>
+                                <FaStar /> {filme.rating}
+                            </span>
+                            <span>Duração:{filme.duration}</span>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
         </div>
     )
 }
