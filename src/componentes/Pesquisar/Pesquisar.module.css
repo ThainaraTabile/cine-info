@@ -40,3 +40,15 @@
     flex-direction: row;
     margin-right: 5rem;
 }
+
+.resultadoPesquisa {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msgResultado {
+    margin: 1rem;
+    color: var(--nude);
+}

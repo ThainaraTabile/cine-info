@@ -1,4 +1,5 @@
-const urlApi = process.env.REACT_APP_API_URL;
+const urlApi = process.env.REACT_APP_API_URL_BASE;
+const urlDeBusca = process.env.REACT_APP_API_URL_TITULO;
 
 export const obterListaDeFilmes = async () => {
     const response = await fetch(`${urlApi}/movies`, {
@@ -11,7 +12,7 @@ export const obterListaDeFilmes = async () => {
     return response.json();
 }
 
-const urlDeBusca = 'https://api-filmes-rose.vercel.app/movies?title='
+
 export const filtrarPorTitulo = async (tituloInput) => {
     const response = await fetch(`${urlDeBusca}${tituloInput}`, {
         method: 'GET',
