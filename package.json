@@ -18,8 +18,9 @@
     "@babel/plugin-proposal-private-property-in-object": "x.y.z"
   },
   "scripts": {
-    "start": "env-cmd -f ./src/.env react-scripts start",
-    "build": "env-cmd -f ./src/.env.production react-scripts build",
+    "start": "env-cmd -f .env react-scripts start",
+    "start:production": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
