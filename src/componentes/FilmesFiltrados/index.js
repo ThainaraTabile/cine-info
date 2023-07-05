@@ -72,9 +72,9 @@ const FilmesFiltrados = ({ genero, titulo }) => {
     return (
         <div className={styles.resultadoPesquisa}>
             {mensagemResultado && <h2 className={styles.msgResultado}>{mensagemResultado}</h2>}
-            <ListaSuspensa
+            {filmes.length > 1 && <ListaSuspensa
                 value={opcaoSelecionada}
-                onChange={handleOpcaoSelecionada} />
+                onChange={handleOpcaoSelecionada} />}
             <Card filmes={filmes} />
 
         </div>
