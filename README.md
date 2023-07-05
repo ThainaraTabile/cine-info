@@ -23,6 +23,7 @@ Este projeto consiste em uma interface web construída com [React](https://githu
 -`Pesquisa por título`: os usuários têm a opção de pesquisar filmes digitando o título desejado na barra de pesquisa. A lista de filmes é atualizada automaticamente para mostrar apenas os filmes cujos títulos correspondem à pesquisa realizada.
 
 <div align="center">
+<img width="500" alt="Captura de Tela 2023-07-05 às 13 32 50" src="https://github.com/ThainaraTabile/cine-info/assets/122550758/013bb778-9cee-4199-ae01-0cc53e9c4cde">
 </div>
 <br><br>
 
