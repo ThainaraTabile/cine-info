@@ -14,15 +14,24 @@ const FilmesFiltrados = ({ genero, titulo }) => {
         setOpcaoSelecionada(opcao);
 
         if (opcao.value === 'positivos') {
-            // Ordenar a lista de filmes por avaliação em ordem decrescente
             const filmesOrdenados = [...filmes].sort((a, b) => b.rating - a.rating);
             setFilmes(filmesOrdenados);
-        }
+        };
         if (opcao.value === 'negativos') {
-            // Ordenar a lista de filmes por avaliação em ordem crescente
             const filmesOrdenados = [...filmes].sort((a, b) => a.rating - b.rating);
             setFilmes(filmesOrdenados);
+        };
+        if (opcao.value === 'aZ') {
+            const filmesOrdenados = [...filmes].sort((a, b) => a.title.localeCompare(b.title));
+            setFilmes(filmesOrdenados);
+        };
+        if (opcao.value === 'zA') {
+            const filmesOrdenados = [...filmes].sort((a, b) => b.title.localeCompare(a.title));
+            setFilmes(filmesOrdenados);
         }
+
+
+
     };
 
 
