@@ -22,22 +22,13 @@ function Pesquisar({ aoBuscarPorTitulo }) {
         aoBuscarPorTitulo(tituloInput);
         setTituloInput('');
     };
-    // const exibirResultado = (titulo) => {
-    //     const mensagem = `Esse é o resultado para: ${titulo}`;
-    //     setMensagemResultado(mensagem);
-    // };
-
-    // const exibirMsgNenhumResultado = (titulo) => {
-    //     const mensagem = `Ops, não encontramos nenhum filme com o título ${titulo}.`;
-    //     setMensagemResultado(mensagem);
-    // };
     return (
         <>
             <div className={styles.pesquisar}>
                 <form onSubmit={aoEnviar}>
                     <input
                         className={styles.input}
-                        placeholder='Pesquisar pelo nome'
+                        placeholder='Pesquisar pelo título'
                         onChange={handleChange}
                         value={tituloInput}
                     />

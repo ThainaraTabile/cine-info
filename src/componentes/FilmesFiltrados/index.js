@@ -2,23 +2,29 @@ import Card from "../Card";
 import styles from './FilmesFiltrados.module.css';
 import { obterFilmes } from '../../api/config-api';
 import React, { useEffect, useState } from 'react';
+import ListaSuspensa from "../ListaSuspensa";
 
 const FilmesFiltrados = ({ genero, titulo }) => {
     const [filmes, setFilmes] = useState([]);
     const [mensagemResultado, setMensagemResultado] = useState('');
+    const [opcaoSelecionada, setOpcaoSelecionada] = useState(null);
 
-    // const exibirResultado = (titulo) => {
-    //     const mensagem = `Esse é o resultado para: ${titulo}.`;
-    //     setMensagemResultado(mensagem);
-    //     if (genero === '') {
-    //         setMensagemResultado('')
-    //     }
-    // };
 
-    // const exibirMsgNenhumResultado = (titulo) => {
-    //     const mensagem = `Ops, não encontramos nenhum filme com o título ${titulo}.`;
-    //     setMensagemResultado(mensagem);
-    // };
+    const handleOpcaoSelecionada = (opcao) => {
+        setOpcaoSelecionada(opcao);
+
+        if (opcao.value === 'positivos') {
+            // Ordenar a lista de filmes por avaliação em ordem decrescente
+            const filmesOrdenados = [...filmes].sort((a, b) => b.rating - a.rating);
+            setFilmes(filmesOrdenados);
+        }
+        if (opcao.value === 'negativos') {
+            // Ordenar a lista de filmes por avaliação em ordem crescente
+            const filmesOrdenados = [...filmes].sort((a, b) => a.rating - b.rating);
+            setFilmes(filmesOrdenados);
+        }
+    };
+
 
     useEffect(() => {
         const buscarFilmes = async () => {
@@ -57,7 +63,11 @@ const FilmesFiltrados = ({ genero, titulo }) => {
     return (
         <div className={styles.resultadoPesquisa}>
             {mensagemResultado && <h2 className={styles.msgResultado}>{mensagemResultado}</h2>}
+            <ListaSuspensa
+                value={opcaoSelecionada}
+                onChange={handleOpcaoSelecionada} />
             <Card filmes={filmes} />
+
         </div>
     )
 };
