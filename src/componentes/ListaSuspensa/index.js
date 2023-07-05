@@ -1,19 +1,3 @@
-// import styles from './ListaSuspensa.module.css';
-
-// function ListaSuspensa() {
-//     return (
-//         <div className={styles.container}>
-//             <select>
-//                 <option>selecione para ordenar as avaliações</option>
-//                 <option className={styles.opcao}> com mais votos positivos</option>
-//                 <option>com mais votos negativos</option>
-//             </select>
-//         </div>
-//     )
-// };
-
-// export default ListaSuspensa;
-
 import React from 'react';
 import Select from 'react-select';
 import styles from './ListaSuspensa.module.css';
@@ -21,6 +5,8 @@ import styles from './ListaSuspensa.module.css';
 const options = [
     { value: 'positivos', label: 'com mais votos positivos' },
     { value: 'negativos', label: 'com mais votos negativos' },
+    { value: 'aZ', label: 'ordenar por título: A-Z' },
+    { value: 'zA', label: 'ordenar por título: Z-A' },
 ];
 
 const customStyles = {
@@ -32,7 +18,7 @@ const customStyles = {
         outline: 'none',
         borderStyle: 'none'
     }),
-    option: (provided, state) => ({
+    option: (provided) => ({
         ...provided,
         backgroundColor: 'var(--dourado)',
         color: 'var(--fonte-destaque)',
@@ -48,7 +34,7 @@ function ListaSuspensa(props) {
     return (
         <div className={styles.container}>
             <Select
-                placeholder='Ordenar as avaliações'
+                placeholder='Ordenar os filmes'
                 options={options}
                 styles={customStyles}
                 className={styles.select}
